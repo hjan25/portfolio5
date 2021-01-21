@@ -4,6 +4,13 @@
 font-family: 'Orbitron', sans-serif; */
 html {
     font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+}
+body {
+    overflow-x: hidden;
+    color: #333;
+    letter-spacing: -0.05em;
+    background: #fff;
 }
 .row {
     max-width: 1000px;
@@ -12,27 +19,40 @@ html {
 .logo {
     font-family: 'Orbitron', sans-serif;
 }
+.container {
+    /* iPhone 가로 스크롤 방지 */
+    overflow-x: hidden;
+}
 /* header style */
 .header {
-    background: orange;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1.5px solid #ddd;
+    /* header bulr 구현x */
 }
 .header-inner {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    height: 77px;
-    background: #fff;
+    align-items: center; height: 77px;
 }
 .header-inner .menu-list li { display: inline-block;}
 .header-inner .menu-list li+li {margin-left: 0.5rem;}
 .header-inner .menu-list .menu {position: relative;}
-.header-inner .menu-list .menu:hover:before {
+.header-inner .menu-list .menu:before {
     content: '';
     position: absolute;
-    top: 100%;
-    width: 100%;
+    bottom: 100%;
+    width: 0%;
     height: 2px;
     background: royalblue;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.header-inner .menu-list .menu:hover:before {
+    width: 100%;
+    opacity: 1;
 }
 .header-inner .menu-list .buy-btn { 
     padding: 5px 3px;
@@ -40,6 +60,7 @@ html {
     border-radius: 5px;
     background: royalblue;
 }
+.open-gnb { display: none;}
 /* footer style */
 .footer {
     color: #fff;
@@ -53,11 +74,15 @@ html {
     border-bottom: 1px solid #fff;
 }
 .footer-top .menu-links { margin-right: auto;}
+.footer-top .sns-links { font-size: 1.5rem;}
+.footer-top .sns-links > a:hover { color: #ddd;}
+.footer-top .menu-links > a,
+.footer-top .sns-links > a+a,
+.footer-bottom .terms-links > a+a { margin-left: 0.7rem;}
 .footer-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 14px;
     height: 55px;
     color: #ccc;
 }
