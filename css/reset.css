@@ -43,8 +43,8 @@ footer, header, hgroup, menu, nav, section {
     font-size:0px; line-height:0; 
 }
 /* h1, h2, h3, h4, h5, h6, pre, textarea { font-size: 100%; }     */
-address, em { font-style:normal }    
-strong, th { font-weight:normal }
+/* address, em { font-style:normal }     */
+/* strong, th { font-weight:normal } */
 
 /*박스안에 넘치는 글자를 말줄임표로 줄일때*/
 .ellipsis {
